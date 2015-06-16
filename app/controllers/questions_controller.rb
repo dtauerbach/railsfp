@@ -5,6 +5,11 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    current_question = session[:current_question]
+    # TODO more validation?
+    if current_question.is_a? Integer
+      redirect_to question_path(current_question)
+    end
   end
 
   # GET /questions/1
