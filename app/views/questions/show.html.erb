@@ -4,7 +4,7 @@
   <%= @question.question_text %>
 </p>
 
-<%= form_for :answer, url: new_answer_path do |f| %> 
+<%= form_for :answer, url: answers_path do |f| %> 
   <%= f.label :salary %>:
   <%= f.text_field :salary %><br />
   <%= f.submit %>
