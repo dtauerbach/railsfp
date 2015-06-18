@@ -3,7 +3,16 @@
     <%= image_tag "fair-pay1-logo.png", class: "logo-image", alt: "FairPay" %>
   </a>
   <%= menu_group pull: :right do %>
-    <%= menu_item "Sign Up", root_path %>
-    <%= menu_item "Log In", root_path %>
+    <li class="active">
+      <%= content_tag :a, "Sign Up", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
+    </li>
+    <li class="active">
+      <%= content_tag :a, "Log In", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
+    </li>
   <% end %>
 <% end %>
+
+<%= modal_dialog id: "signup-modal",
+         header: { show_close: true, dismiss: 'modal', title: 'Modal header' },
+         body:   { content: 'This is the body' },
+         footer: { content: content_tag(:button, 'Save', class: 'btn') } %>
