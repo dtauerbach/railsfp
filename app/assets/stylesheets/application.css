@@ -14,3 +14,13 @@
  *= require_self
  *= require bootstrap_and_overrides
  */
+
+.logo-image {
+    width: 150px;
+}
+
+.navbar-brand {
+    border: 5px;
+    padding: 5px;
+    margin: 0px;
+}
