@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @questions = Question.all
     current_question = session[:current_question]
     # TODO more validation?
-    if current_question.is_a? Integer
+    if (current_question.is_a? Integer) && (Question.exists?(current_question))
       redirect_to question_path(current_question)
     end
   end
