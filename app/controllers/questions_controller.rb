@@ -5,6 +5,9 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    if !session[:current_question]
+      session[:current_question] = 1
+    end
     current_question = session[:current_question]
     # TODO more validation?
     if (current_question.is_a? Integer) && (Question.exists?(current_question))
