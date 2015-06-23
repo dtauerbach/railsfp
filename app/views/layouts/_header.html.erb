@@ -1,5 +1,5 @@
-<%= nav_bar responsive: true do %>
-  <a class="navbar-brand" href="/">
+<%= nav_bar fixed: :top, responsive: true, class: "navbar-custom" do %>
+  <a class="navbar-brand page-scroll" href="#page-top">
     <%= image_tag "fair-pay1-logo.png", class: "logo-image", alt: "FairPay" %>
   </a>
   <%= menu_group pull: :right do %>
@@ -13,6 +13,6 @@
 <% end %>
 
 <%= modal_dialog id: "signup-modal",
-         header: { show_close: true, dismiss: 'modal', title: 'Modal header' },
-         body:   { content: 'This is the body' },
-         footer: { content: content_tag(:button, 'Save', class: 'btn') } %>
+         header: { show_close: true, dismiss: 'modal', title: 'Sign in' },
+         body:   { content: image_tag("Sign-in-Large---Default.png") },
+         footer: { } %>
