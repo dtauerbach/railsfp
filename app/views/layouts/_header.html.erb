@@ -1,5 +1,5 @@
-<%= nav_bar responsive: true do %>
-  <a class="navbar-brand" href="/">
+<%= nav_bar fixed: :top, responsive: true, class: "navbar-custom" do %>
+  <a class="navbar-brand page-scroll" href="#page-top">
     <%= image_tag "fair-pay1-logo.png", class: "logo-image", alt: "FairPay" %>
   </a>
   <%= menu_group pull: :right do %>
