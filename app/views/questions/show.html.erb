@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="question">
   <%= @question.question_text %>
-</p>
+</div>
 
 <%= form_for :answer, url: answers_path do |f| %> 
   <%= f.label :salary %>:
