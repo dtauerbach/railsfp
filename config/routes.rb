@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'question_input/edit'
+
+  get 'question_input/new'
+
+  get 'question_input/create'
+
   get 'home/index'
 
   resources :questions
   resources :answers
+  resources :question_inputs
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

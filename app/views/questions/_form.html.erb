@@ -15,7 +15,30 @@
     <%= f.label :question_title %><br>
     <%= f.text_field :question_title %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= form_for QuestionInput.new do |f| %>
+  <div class="field">
+    <%= f.label :answer_label %><br>
+    <%= f.text_field :answer_label %><br>
+  </div>
+
+  <div>
+    <%= f.label :answer_type %><br>
+    <%= f.text_field :answer_type %><br>
+  </div>
+
+  <div>
+    <%= f.label :question_id %><br>
+    <%= f.text_field :question_id %><br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
