@@ -11,19 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616182019) do
+ActiveRecord::Schema.define(version: 20150616180122) do
 
   create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
     t.string   "answer_json"
     t.integer  "uuid"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+
+  create_table "question_inputs", force: :cascade do |t|
+    t.integer  "question_id"
+    t.string   "answer_label"
+    t.string   "answer_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "question_inputs", ["question_id"], name: "index_question_inputs_on_question_id"
+
   create_table "questions", force: :cascade do |t|
-    t.string   "question_text"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "question_title"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end
