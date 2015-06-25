@@ -4,11 +4,17 @@
   <%= @question.question_title %>
 </div>
 
-<%= form_for :answer, url: answers_path do |f| %> 
-  <%= f.label :salary %>:
-  <%= f.text_field :salary %><br />
-  <%= f.submit %>
-<% end %>
+<div class="centered">
+  <%= form_for :answer, url: answers_path do |f| %> 
+    <% @question.question_inputs.each do |input| %>
+      <%= f.label input.answer_label, class: "question-button" %>
+      <% if input.answer_type == "button" %>
+        <%= f.radio_button_tag(@question.id, input.answer_label) %><br>
+        <% end %>
+      <% end %>
+    <%= f.submit %>
+  <% end %>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
+</div>
