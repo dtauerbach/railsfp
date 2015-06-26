@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<div class="question">
-  <%= @question.question_title %>
-</div>
+<div class="content-container">
+  <div class="question">
+    <%= @question.question_title %>
+  </div>
 
-<div class="centered">
+  <div>
   <%= form_for :answer, url: answers_path do |f| %> 
     <% @question.question_inputs.each do |input| %>
-      <div class="<%= input.answer_type%>"> <%= input.answer_label %> </div><br>
+      <div class="<%= input.answer_type%>"> <%= input.answer_label %> </div>
     <% end %>
     <%= f.submit %>
   <% end %>
   <%= link_to 'Edit', edit_question_path(@question) %> |
   <%= link_to 'Back', questions_path %>
+  </div>
 </div>
-
-

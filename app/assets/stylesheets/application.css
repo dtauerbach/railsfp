@@ -44,6 +44,10 @@
     cursor:pointer;
 }
 
+.question-button:hover {
+    background-color: #0f0;
+}
+
 .centered {
     text-align: center;
 }
