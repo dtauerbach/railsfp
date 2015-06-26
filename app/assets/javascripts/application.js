@@ -15,3 +15,15 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+function submit_answer(answer_text) {
+    $('input[name="answer_json"]').val(answer_text);
+    $("form").submit();
+}
+
+$(document).ready(function() {
+    $(".question-button").click(function(){
+        submit_answer($(this).text());
+    });
+});
+

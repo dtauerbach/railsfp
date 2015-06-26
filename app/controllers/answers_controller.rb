@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   def create
-    @answer = Answer.new(answer_params)
+    @answer = Answer.create(answer_params)
     if !session[:current_question]
       session[:current_question] = 2
     else
@@ -12,6 +12,6 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:answer_json)
+    params.permit(:answer_json)
   end
 end
