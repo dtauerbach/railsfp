@@ -8,6 +8,10 @@ class QuestionInputsController < ApplicationController
   def edit
   end
 
+  def new
+    @question_input = QuestionInput.new
+  end
+
   def create
     @question_input = QuestionInput.new(question_input_params)
     @question_input.save

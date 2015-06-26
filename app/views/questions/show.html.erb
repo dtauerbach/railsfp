@@ -9,7 +9,11 @@
     <%= form_for Answer.new, url: answers_path do |f| %>
       <%= hidden_field_tag 'answer_json', '{nodata}' %>
       <% @question.question_inputs.each do |input| %>
-      <div class="<%= input.answer_type%>"> <%= input.answer_label %> </div>
+        <% if input.answer_type == 'textbox' %>
+          <%= text_field_tag 'answer', nil, placeholder: input.answer_label, class: "fairpay-text-input" %>
+        <% else %>
+          <div class="<%= input.answer_type%>"> <%= input.answer_label %> </div>
+        <% end %>
       <% end %>
     <% end %>
     <%= link_to 'Edit', edit_question_path(@question) %> |
