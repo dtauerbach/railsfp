@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Question Inputs</h1>
+<div class="admin-container">
+  <h1>Listing Question Inputs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Question input</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>Question input</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @question_inputs.each do |question_input| %>
+    <tbody>
+      <% @question_inputs.each do |question_input| %>
       <tr>
         <td><%= question_input.answer_label %></td>
         <td><%= link_to 'Show', question_input %></td>
         <td><%= link_to 'Edit', edit_question_input_path(question_input) %></td>
         <td><%= link_to 'Destroy', question_input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Question Input', new_question_input_path %>
+  <%= link_to 'New Question Input', new_question_input_path %>
+</div>
