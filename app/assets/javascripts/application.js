@@ -25,5 +25,9 @@ $(document).ready(function() {
     $(".question-button").click(function(){
         submit_answer($(this).text());
     });
+
+    $(".submit-button").click(function(){
+        submit_answer($('input[name="answer"]').val());
+    });
 });
 
