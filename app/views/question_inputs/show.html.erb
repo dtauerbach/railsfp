@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="content-container">
+  <div>
+    <%= @question_input.answer_label %>
+  </div>
+
+  <div>
+    <%= @question_input.answer_type %>
+  </div>
+
+  <div>
+    <%= @question_input.question_id %>
+  </div>
+
+  <%= link_to 'Edit', edit_question_input_path(@question_input) %> |
+  <%= link_to 'Back', question_inputs_path %>
+</div>
+

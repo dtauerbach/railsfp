@@ -47,3 +47,12 @@
 .centered {
     text-align: center;
 }
+
+.content-container {
+    text-align: center;
+    float: center;
+    width: 60%;
+    padding: 2em;
+    border: 1em;
+    margin: 0 auto;
+}
