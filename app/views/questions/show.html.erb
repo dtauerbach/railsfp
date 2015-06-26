@@ -11,7 +11,6 @@
       <% @question.question_inputs.each do |input| %>
       <div class="<%= input.answer_type%>"> <%= input.answer_label %> </div>
       <% end %>
-      <%= f.submit %>
     <% end %>
     <%= link_to 'Edit', edit_question_path(@question) %> |
     <%= link_to 'Back', questions_path %>

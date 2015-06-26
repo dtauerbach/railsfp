@@ -44,6 +44,13 @@
     cursor:pointer;
 }
 
+.button-small {
+    font-size: 2em;
+    width: 50%;
+    margin: 0 auto;
+}
+    
+
 .question-button:hover {
     background-color: #0f0;
 }
@@ -54,7 +61,6 @@
 
 .content-container {
     text-align: center;
-    float: center;
     width: 60%;
     padding: 2em;
     border: 1em;
