@@ -14,7 +14,7 @@
 
     <div class="<%= session[:answered_questions].nil? ? 'col-md-12' : 'col-md-8' %>">
       <!-- todo style this and make it only show up sometimes -->
-      <% unless session[:progress_percentage].nil? %>
+      <% unless (session[:progress_percentage].nil? || session[:progress_percentage] < 10) %>
         <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="<%= session[:progress_percentage] %>"
                aria-valuemin="0" aria-valuemax="100" style="width:<%= session[:progress_percentage] %>%">
