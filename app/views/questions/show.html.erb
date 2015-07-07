@@ -1,31 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <div class="content-container">
-  <!-- todo style this and make it only show up sometimes -->
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="70"
-         aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      <span class="sr-only">70% Complete</span>
-    </div>
-    </div>
-  
-  <div class="question">
-    <%= @question.question_title %>
-  </div>
 
-  <div>
-    <%= form_for Answer.new, url: answers_path do |f| %>
-      <%= hidden_field_tag 'answer_json', '{nodata}' %>
-      <%= hidden_field_tag 'question_id', @question.id %>
-      <% @question.question_inputs.each do |input| %>
-        <% if input.answer_type == 'textbox' %>
-          <%= text_field_tag 'answer', nil, placeholder: input.answer_label, class: "fairpay-text-input" %>
-        <% else %>
-          <div class="<%= input.answer_type%>"> <%= input.answer_label %> </div>
-        <% end %>
+  <div class="row-fluid">
+    <!-- todo move this into partial -->
+    <div class="col-md-4">
+      <% session[:answered_questions].each_value do |answered_question| %>
+        <div> <%= answered_question["answer_json"] %> </div>
       <% end %>
-    <% end %>
-    <%= link_to 'Edit', edit_question_path(@question) %> |
-    <%= link_to 'Back', questions_path %>
+    </div>
+
+    <div class="col-md-8">
+      <!-- todo style this and make it only show up sometimes -->
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+             aria-valuemin="0" aria-valuemax="100" style="width:70%">
+          <span class="sr-only">70% Complete</span>
+        </div>
+      </div>
+      
+      <div class="question">
+        <%= @question.question_title %>
+      </div>
+
+      <div class="answer_inputs">
+        <%= form_for Answer.new, url: answers_path do |f| %>
+        <%= hidden_field_tag 'answer_json', '{nodata}' %>
+        <%= hidden_field_tag 'question_id', @question.id %>
+        <% @question.question_inputs.each do |input| %>
+        <% if input.answer_type == 'textbox' %>
+        <%= text_field_tag 'answer', nil, placeholder: input.answer_label, class: "fairpay-text-input" %>
+        <% else %>
+        <div class="<%= input.answer_type%>"> <%= input.answer_label %> </div>
+        <% end %>
+        <% end %>
+        <% end %>
+        <%= link_to 'Edit', edit_question_path(@question) %> |
+        <%= link_to 'Back', questions_path %>
+      </div>
+    </div>
   </div>
 </div>
