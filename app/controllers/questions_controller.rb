@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
     @questions = Question.all
     # Go to next question that hasn't been answered, if it exists
     question_for_redirect = next_question
+    session[:progress_percentage] = get_percentage
     redirect_to question_path(question_for_redirect) unless question_for_redirect.nil?
   end
 
@@ -86,4 +87,11 @@ class QuestionsController < ApplicationController
     result = Question.exists?(question_candidate) ? question_candidate : nil
     return result
   end
+
+  def get_percentage
+    return 0 if !session[:answered_questions] || Question.count == 0
+    percentage = session[:answered_questions].length.to_f / Question.count
+    return (percentage * 100).to_i
+  end
+  
 end

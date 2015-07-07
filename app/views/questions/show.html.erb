@@ -10,16 +10,18 @@
           <div class="answered-question"><h3><em><%= answered_question["answer_json"] %> </em></h3></div>
         <% end %>
       </div>
-      <% end %>
+    <% end %>
 
-    <div class="col-md-8">
+    <div class="<%= session[:answered_questions].nil? ? 'col-md-12' : 'col-md-8' %>">
       <!-- todo style this and make it only show up sometimes -->
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="70"
-             aria-valuemin="0" aria-valuemax="100" style="width:70%">
-          <span class="sr-only">70% Complete</span>
+      <% unless session[:progress_percentage].nil? %>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="<%= session[:progress_percentage] %>"
+               aria-valuemin="0" aria-valuemax="100" style="width:<%= session[:progress_percentage] %>%">
+            <span class="sr-only"><%= session[:progress_percentage] %>% Complete</span>
+          </div>
         </div>
-      </div>
+      <% end %>
       
       <div class="question_text">
         <h1><%= @question.question_title %></h1>
