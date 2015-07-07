@@ -5,14 +5,9 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
-    if !session[:current_question]
-      session[:current_question] = 1
-    end
-    current_question = session[:current_question]
-    # TODO more validation?
-    if (current_question.is_a? Integer) && (Question.exists?(current_question))
-      redirect_to question_path(current_question)
-    end
+    # Go to next question that hasn't been answered, if it exists
+    question_for_redirect = next_question
+    redirect_to question_path(question_for_redirect) unless question_for_redirect.nil?
   end
 
   # GET /questions/1
@@ -70,13 +65,25 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
+    
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def question_params
-      params.require(:question).permit(:question_title)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def question_params
+    params.require(:question).permit(:question_title)
+  end
+
+  # logic to figure out where to send the user next
+  def next_question
+    # If we have no info, assume user is on the first question
+    # TODO "1" may not be a valid question id, we may need to change this
+    return 1 if !session[:answered_questions]
+    # TODO more validation that this is an integer, this is UGC!
+    question_candidate = session[:answered_questions].keys.map(&:to_i).max + 1
+    result = Question.exists?(question_candidate) ? question_candidate : nil
+    return result
+  end
 end

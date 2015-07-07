@@ -16,6 +16,7 @@
   <div>
     <%= form_for Answer.new, url: answers_path do |f| %>
       <%= hidden_field_tag 'answer_json', '{nodata}' %>
+      <%= hidden_field_tag 'question_id', @question.id %>
       <% @question.question_inputs.each do |input| %>
         <% if input.answer_type == 'textbox' %>
           <%= text_field_tag 'answer', nil, placeholder: input.answer_label, class: "fairpay-text-input" %>
