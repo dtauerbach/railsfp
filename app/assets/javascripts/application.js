@@ -16,18 +16,20 @@
 //= require turbolinks
 //= require_tree .
 
-function submit_answer(answer_text) {
+submit_answer = function(answer_text) {
     $('input[name="answer_json"]').val(answer_text);
     $("form").submit();
 }
 
-$(document).ready(function() {
-    $(".question-button").click(function(){
+ready = function() {
+    $(".question-button").on("click", function(){
         submit_answer($(this).text());
     });
 
-    $(".submit-button").click(function(){
+    $(".submit-button").on("click", function(){
         submit_answer($('input[name="answer"]').val());
     });
-});
+}
 
+$(document).ready(ready);
+$(document).on('page:load', ready);
