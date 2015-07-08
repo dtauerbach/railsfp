@@ -19,6 +19,14 @@
     width: 150px;
 }
 
+.right-arrow-button {
+    width: 150px;
+}
+
+.right-arrow {
+    background: url("arrow-right-small.png") top left no-repeat; 
+}
+
 .navbar-brand {
     border: 5px;
     padding: 5px;
