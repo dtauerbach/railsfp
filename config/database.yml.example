@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: railsfp_development
+  pool: 5
+  username: fairpay
+  password: [insert password]
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: railsfp_test
+  pool: 5
+  username: fairpay
+  password: [insert password]
+  host: localhost

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150616180122) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
     t.string   "answer_json"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150616180122) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "question_inputs", force: :cascade do |t|
     t.integer  "question_id"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150616180122) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "question_inputs", ["question_id"], name: "index_question_inputs_on_question_id"
+  add_index "question_inputs", ["question_id"], name: "index_question_inputs_on_question_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.string   "question_title"
