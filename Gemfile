@@ -23,4 +23,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
+
