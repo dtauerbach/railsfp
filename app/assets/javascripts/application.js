@@ -18,6 +18,7 @@
 //= require d3plus
 //= require_tree .
 
+// fake data for demo
 var data = [
     {"year": 1992, "name":"alpha", "value": 34},
     {"year": 1992, "name":"alpha2", "value": 65},
