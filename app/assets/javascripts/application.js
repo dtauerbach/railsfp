@@ -44,15 +44,17 @@ ready = function() {
         submit_answer($('input[name="answer"]').val());
     });
 
-    var visualization = d3plus.viz()
-        .container("#viz")
-        .data(data)
-        .type("box")
-        .id("name")
-        .x("value")
-        .y("year", {"scale": "discrete"})
-        .time("year")
-        .draw()
+    if ($('#viz').length) {
+        var visualization = d3plus.viz()
+            .container("#viz")
+            .data(data)
+            .type("box")
+            .id("name")
+            .x("value")
+            .y("year", {"scale": "discrete"})
+            .time("year")
+            .draw()
+    }
 }
 
 
