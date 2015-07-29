@@ -21,9 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
+  gem 'seed_dump'
   gem 'spring'
   gem 'web-console', '~> 2.0'
   gem 'poltergeist'
   gem 'selenium-webdriver'
 end
-
