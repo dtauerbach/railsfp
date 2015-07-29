@@ -7,7 +7,7 @@
     <% unless session[:answered_questions].nil? %>
       <div class="col-md-4 left-panel">
         <% session[:answered_questions].each_value do |answered_question| %>
-          <div class="answered-question"><h3><em><%= answered_question["answer_json"] %> </em></h3></div>
+          <div class="answered-question"><h3><em> <a href= "/questions/<%= answered_question["question_id"]%>"><%=answered_question["answer_json"]%> </a></em></h3></div>
         <% end %>
       </div>
     <% end %>
