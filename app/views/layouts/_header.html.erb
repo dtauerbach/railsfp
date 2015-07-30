@@ -4,15 +4,15 @@
   </a>
   <%= menu_group pull: :right do %>
     <li class="active">
-      <%= content_tag :a, "Sign Up", href: "/auth/linkedin", class: 'btn', data: {toggle: 'modal'} %>
+      <%= content_tag :a, "Sign Up", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
     </li>
     <li class="active">
-      <%= content_tag :a, "Log In", href: "/auth/linkedin", class: 'btn', data: {toggle: 'modal'} %>
+      <%= content_tag :a, "Log In", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
     </li>
   <% end %>
 <% end %>
 
 <%= modal_dialog id: "signup-modal",
          header: { show_close: true, dismiss: 'modal', title: 'Sign in' },
-         body:   { content: image_tag("Sign-in-Large---Default.png") },
+         body:   { content: link_to(image_tag("Sign-in-Large---Default.png"), "/auth/linkedin") },
          footer: { } %>
