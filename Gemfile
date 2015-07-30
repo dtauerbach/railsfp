@@ -9,7 +9,6 @@ gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'sqlite3'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 # TODO: need to NOT just use the latest build here in general!
