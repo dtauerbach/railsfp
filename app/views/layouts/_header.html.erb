@@ -3,12 +3,21 @@
     <%= image_tag "fair-pay1-logo.png", class: "logo-image", alt: "FairPay" %>
   </a>
   <%= menu_group pull: :right do %>
-    <li class="active">
-      <%= content_tag :a, "Sign Up", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
-    </li>
-    <li class="active">
-      <%= content_tag :a, "Log In", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
-    </li>
+    <% if current_user.nil? %>
+      <li class="active">
+        <%= content_tag :a, "Sign Up", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
+      </li>
+      <li class="active">
+        <%= content_tag :a, "Log In", href: "#signup-modal", class: 'btn', data: {toggle: 'modal'} %>
+      </li>
+    <% else %>
+      <li class="active">
+        <div> Hello <%= current_user.name %> </div>
+      </li>
+      <li class="active">
+        <%= content_tag :a, "Log Out", href: "/signout" , class: 'btn' %>
+      </li>
+    <% end %>
   <% end %>
 <% end %>
 
