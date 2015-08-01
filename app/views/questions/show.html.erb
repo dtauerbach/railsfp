@@ -12,6 +12,7 @@
           <li> <div class="answered-question"><h4><em> <a href= "/questions/<%= answered_question["question_id"]%>"><%=answered_question["answer_json"]%> </a></em></h4></div>
         <% end %>
         </ul>
+        <div class="answered-question"><h3><em>My Sharing Settings</em></h3></div>
       </div>
     <% end %>
 
@@ -26,7 +27,7 @@
         </div>
       <% end %>
 
-      <div id="viz"></div>
+      <!-- <div id="viz"></div> -->
 
       <div class="question_text">
         <h1><%= @question.question_title %></h1>
