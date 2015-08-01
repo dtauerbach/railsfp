@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :answers
   resources :question_inputs
 
-  get "/auth/:provider/callback" => "sessions#create"
-  get "/signout" => "sessions#destroy", :as => :signout
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/signout' => 'sessions#destroy', :as => :signout
+  get '/sharing' => 'sharing#index'
 
   root 'home#index'
 end

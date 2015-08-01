@@ -9,10 +9,10 @@
         <div class="answered-question"><h3><em>My Answers</em></h3></div>
         <ul>
         <% session[:answered_questions].each_value do |answered_question| %>
-          <li> <div class="answered-question"><h4><em> <a href= "/questions/<%= answered_question["question_id"]%>"><%=answered_question["answer_json"]%> </a></em></h4></div>
+          <li> <div class="answered-question"><h4><em><a href= "/questions/<%= answered_question["question_id"]%>"><%= answered_question["answer_json"] %></a></em></h4></div>
         <% end %>
         </ul>
-        <div class="answered-question"><h3><em>My Sharing Settings</em></h3></div>
+        <div class="answered-question"><h3><em><a href="/sharing">My Sharing Settings</a></em></h3></div>
       </div>
     <% end %>
 
