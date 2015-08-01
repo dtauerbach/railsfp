@@ -24,7 +24,7 @@
 }
 
 .right-arrow {
-    background: url("arrow-right-small.png") top left no-repeat; 
+    background: url("arrow-right-small.png") top left no-repeat;
 }
 
 .navbar-brand {
@@ -46,7 +46,7 @@
     font-size: 3em;
     background:#aaa;
     color:#fff;
-    border-radius:8px;   
+    border-radius:8px;
     padding:1em;
     margin:1em;
     cursor:pointer;
@@ -57,7 +57,7 @@
     width: 50%;
     margin: 0 auto;
 }
-    
+
 
 .question-button:hover {
     background-color: #0f0;
@@ -105,4 +105,8 @@
 .answered-question {
     text-align: left;
     color: #dcdcdc;
+}
+
+ul {
+    list-style-type: none;
 }
