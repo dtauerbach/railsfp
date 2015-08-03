@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require d3
 //= require d3plus
 //= require_tree .
