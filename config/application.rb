@@ -22,5 +22,8 @@ module Railsfp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Add vendor path that bower uses
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
   end
 end
