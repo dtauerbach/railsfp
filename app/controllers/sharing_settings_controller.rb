@@ -1,5 +1,5 @@
 class SharingSettingsController < ApplicationController
   def index
-    @sharingsettings = SharingSetting.all
+    @sharing_settings = SharingSetting.all
   end
 end
