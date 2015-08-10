@@ -4,7 +4,6 @@ var SharingSetting = React.createClass({
     }
 });
 
-
 var SharingSettings = React.createClass({
     getInitialState: function() {
         return {sharing_setting: 0};
